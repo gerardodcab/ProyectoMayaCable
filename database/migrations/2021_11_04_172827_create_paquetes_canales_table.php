@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaqueteCanaleTable extends Migration
+class CreatePaquetesCanalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreatePaqueteCanaleTable extends Migration
      */
     public function up()
     {
-        Schema::create('paquete_canale', function (Blueprint $table) {
-            $table->id('pack_canal');
+        Schema::create('paquetes_canales', function (Blueprint $table) {
+            $table->id('id_pack_canal');
+
             $table->unsignedBigInteger('id_pack');
             $table->unsignedBigInteger('id_canal');
-            
 
             $table->foreign('id_pack')
                     ->references('id_pack')->on('paquetes')
                     ->onDelete('cascade');
-        
-            $table->foreign('id_canal')
+
+           $table->foreign('id_canal')
                     ->references('id_canal')->on('canales')
                     ->onDelete('cascade');
 
@@ -39,6 +39,6 @@ class CreatePaqueteCanaleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paquete_canale');
+        Schema::dropIfExists('paquetes_canales');
     }
 }
