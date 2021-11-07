@@ -37,17 +37,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-            <li class="nav-item {{request()->routeIs('Home') ? 'active' : '' }} px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="{{route('Home') }}">Home</a>
+         
+          <li class="nav-item {{request()->routeIs('auth.register') ? 'active' : ''}} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{{route('register') }}">Usuarios</a>
+          </li>
+
+            <li class="nav-item {{request()->routeIs('paquete.create') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('paquetes.create') }}">Paquetes</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('paquetes.*') ? 'active' : ''}} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{{route('paquetes.index') }}">Paquetes</a>
+            <li class="nav-item {{request()->routeIs('promocione.create') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('promociones.create') }}">Promociones</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('promociones.*') ? 'active' : ''}} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{{route('promociones.index') }}">Promociones</a>
+            <li class="nav-item {{request()->routeIs('canale.create') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('canales.create') }}">Canales</a>
             </li>
+
+            <li class="nav-item {{request()->routeIs('paquetes-canale.create') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('paquetes-canales.create') }}">Canales de paquetes</a>
+            </li>
+
+            <li class="nav-item {{request()->routeIs('tipospaquete.create') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('tipospaquetes.create') }}">Tipos de Paquetes</a>
+            </li>
+ 
       
 
         </ul>

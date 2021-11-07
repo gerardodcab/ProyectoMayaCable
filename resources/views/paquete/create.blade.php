@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('template_title')
-    Create Paquete
-@endsection
+@section('title', 'Add  Chanells to Packs')
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Paquete</span>
+                        <span class="card-title">Add  Chanells to Packs</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('paquetes.store') }}"  role="form" enctype="multipart/form-data">

@@ -1,8 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
-@section('template_title')
-    Create Tipospaquete
-@endsection
+@section('title', 'Tipos Paquetes')
 
 @section('content')
     <section class="content container-fluid">
@@ -13,7 +11,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Tipospaquete</span>
+                        <span class="card-title">Create Tipos de paquetes</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('tipospaquetes.store') }}"  role="form" enctype="multipart/form-data">
