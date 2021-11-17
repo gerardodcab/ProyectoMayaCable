@@ -4,14 +4,15 @@
 
 @section('content')
 
+<section class="container">
+    
+<h1 class="text-greenC animate__animated animate__headShake  animate__slow	 animate__infinite" >Bienvenido a Maya Cable TV <span class="badge bg-secondary"></span></h1>
+<h1 class="animate__animated animate__headShake  animate__slow	 animate__infinite">Navegue por nuestros paquetes y encuentre el paquete perfecto<span class="badge bg-secondary"></span></h1>
 
-<h1>Bienvenido a Maya Cable TV <span class="badge bg-secondary"></span></h1>
-<h1>Navegue por nuestros paquetes y encuentre el paquete perfecto<span class="badge bg-secondary"></span></h1>
 
 
-
-<div class="container">
-    <div class="row">
+<div>
+    <div class="row ">
         <div class="col-3">
             <div class="card">
                 <div class="card-body">
@@ -62,4 +63,5 @@
         
     </div>
 </div>
+</section>
 @endsection
