@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Imagen:</strong>
-                            {{ $paquete->imagen }}
+                            <img style="width: 75%; height: 75%" src="{{ asset('storage').'/'.$paquete->imagen }}" alt="..." />
                         </div>
                         <div class="form-group">
                             <strong>Id Tipo:</strong>

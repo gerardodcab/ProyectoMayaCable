@@ -17,6 +17,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
 </head>
 <body>
@@ -42,24 +43,24 @@
             <a class="nav-link text-uppercase text-expanded" href="{{route('register') }}">Usuarios</a>
           </li>
 
-            <li class="nav-item {{request()->routeIs('paquete.create') ? 'active' : ''}} px-lg-4">
+            <li class="nav-item {{request()->routeIs('paquete.*') ? 'active' : ''}} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{{route('paquetes.create') }}">Paquetes</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('promocione.create') ? 'active' : ''}} px-lg-4">
+            <li class="nav-item {{request()->routeIs('promocione.*') ? 'active' : ''}} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{{route('promociones.create') }}">Promociones</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('canale.create') ? 'active' : ''}} px-lg-4">
+            <li class="nav-item {{request()->routeIs('canale.*') ? 'active' : ''}} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{{route('canales.create') }}">Canales</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('paquetes-canale.create') ? 'active' : ''}} px-lg-4">
+            <li class="nav-item {{request()->routeIs('paquetes-canale.*') ? 'active' : ''}} px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{{route('paquetes-canales.create') }}">Canales de paquetes</a>
             </li>
 
-            <li class="nav-item {{request()->routeIs('tipospaquete.create') ? 'active' : ''}} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{{route('tipospaquetes.create') }}">Tipos de Paquetes</a>
+            <li class="nav-item {{request()->routeIs('tipospaquete.*') ? 'active' : ''}} px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{{route('tipospaquetes.index') }}">Tipos de Paquetes</a>
             </li>
  
       

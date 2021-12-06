@@ -38,7 +38,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-            <li class="nav-item {{request()->routeIs('Home') ? 'active' : '' }} px-lg-4">
+            <li class="nav-item {{request()->routeIs('Home') ? 'active' : ''}} px-lg-4">
                 <a class="nav-link text-uppercase text-expanded" href="{{route('Home') }}">Home</a>
             </li>
 

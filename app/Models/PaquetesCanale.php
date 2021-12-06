@@ -28,6 +28,8 @@ class PaquetesCanale extends Model
     ];
 
     protected $perPage = 20;
+    protected $primaryKey = "id_pack_canal";
+
 
     /**
      * Attributes that should be mass-assignable.

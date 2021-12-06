@@ -34,6 +34,7 @@ class Promocione extends Model
     ];
 
     protected $perPage = 20;
+    protected $primaryKey = "id_prom";
 
     /**
      * Attributes that should be mass-assignable.

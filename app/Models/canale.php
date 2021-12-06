@@ -29,6 +29,7 @@ class Canale extends Model
     ];
 
     protected $perPage = 20;
+    protected $primaryKey = "id_canal";
 
     /**
      * Attributes that should be mass-assignable.

@@ -19,7 +19,7 @@ class PaqueteController extends Controller
     public function index()
     {
         $paquetes = Paquete::paginate();
-
+ 
         return view('paquete.index', compact('paquetes'))
             ->with('i', (request()->input('page', 1) - 1) * $paquetes->perPage());
     }
@@ -43,9 +43,15 @@ class PaqueteController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Paquete::$rules);
+        $datospaquete   = request()->validate(Paquete::$rules);
 
-        $paquete = Paquete::create($request->all());
+        if ($request->hasFile('imagen')){
+            $datospaquete['imagen']=$request->file('imagen')->store('uploads','public');
+        }
+
+        $paquete    = Paquete::insert($datospaquete);
+
+
 
         return redirect()->route('paquetes.index')
             ->with('success', 'Paquete created successfully.');

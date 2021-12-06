@@ -51,9 +51,9 @@
 											<td>{{ $tipospaquete->nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('tipospaquetes.destroy',$tipospaquete->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('tipospaquetes.show',$tipospaquete->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('tipospaquetes.edit',$tipospaquete->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('tipospaquetes.destroy', $tipospaquete->id_tipo) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('tipospaquetes.show',$tipospaquete->id_tipo) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('tipospaquetes.edit',$tipospaquete->id_tipo) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

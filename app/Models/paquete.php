@@ -28,7 +28,7 @@ class Paquete extends Model
     static $rules = [
 		'id_pack' => 'required',
 		'nombre' => 'required',
-		'velocidad' => 'required',
+		'velocidad' => 'nullable',
 		'precio' => 'required',
 		'precioinstal' => 'required',
 		'imagen' => 'required',
@@ -36,6 +36,7 @@ class Paquete extends Model
     ];
 
     protected $perPage = 20;
+    protected $primaryKey = "id_pack";
 
     /**
      * Attributes that should be mass-assignable.

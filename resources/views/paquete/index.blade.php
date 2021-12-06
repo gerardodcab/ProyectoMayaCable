@@ -1,83 +1,167 @@
-@extends('layouts.app')
+@extends('layouts.plantilla')
 
 @section('template_title')
     Paquete
 @endsection
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="container">
 
-                            <span id="card_title">
-                                {{ __('Paquete') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('paquetes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
+        
+        <div class="cta-inner text-center rounded" >
+            <div class="row cta navbar rounded">
+                <h2>Paquetes de Televisión</h2>
+            </div>
+            <div class="row" width="100%">
+                
+                @foreach ($paquetes as $paquete)
+                @if($paquete->id_tipo == 2)
+                <div class="card" style="width: 25%">
+                  
+                     
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Id Pack</th>
-										<th>Nombre</th>
-										<th>Velocidad</th>
-										<th>Precio</th>
-										<th>Precioinstal</th>
-										<th>Imagen</th>
-										<th>Id Tipo</th>
+                        
 
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($paquetes as $paquete)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $paquete->id_pack }}</td>
-											<td>{{ $paquete->nombre }}</td>
-											<td>{{ $paquete->velocidad }}</td>
-											<td>{{ $paquete->precio }}</td>
-											<td>{{ $paquete->precioinstal }}</td>
-											<td>{{ $paquete->imagen }}</td>
-											<td>{{ $paquete->id_tipo }}</td>
+                        <div class="form-group, text-Black" style="text-align:center">
+                            
+                            <div>
+                                <tr><h4 >Paquete {{ $paquete->nombre }} </h4></tr>
+                            </div>
+                            <br>
+                            
+                            <div>
+                                <tr><h4>${{ $paquete->precio }}.00 Mensual</h4></tr>
+                            </div>
 
-                                            <td>
-                                                <form action="{{ route('paquetes.destroy',$paquete->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('paquetes.edit',$paquete->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            
+                            <div>
+                                <tr><h4> $ {{ $paquete->precioinstal }}.00 </h4></tr>
+                            </div>
+                            <div>
+                                <tr><h5> Por instalación </h5></tr>
+                            </div>
+                            <div>
+                            <tr><img style="width: 100%; height: 100%" src="{{ asset('storage').'/'.$paquete->imagen }}" alt="..." /></td>
+                            </div>
+                            
                         </div>
+                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
+                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                           
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        
                     </div>
                 </div>
-                {!! $paquetes->links() !!}
+                @endif
+                @endforeach
+                
             </div>
+
+            <div class="row cta navbar rounded">
+                <h2>Paquetes de Internet</h2>
+            </div>
+            <div class="row" width="100%">
+                
+                @foreach ($paquetes as $paquete)
+                @if($paquete->id_tipo == 1)
+                <div class="card" style="width: 25%">
+                  
+                     
+                    <div class="card-body">
+                        
+
+                        <div class="form-group, text-Black" style="text-align:center">
+                            
+                            <div>
+                                <tr><h4 >Paquete {{ $paquete->nombre }} </h4></tr>
+                            </div>
+                            <br>
+                            
+                            <div>
+                                <tr><h4>${{ $paquete->precio }}.00 Mensual</h4></tr>
+                            </div>
+
+                            
+                            <div>
+                                <tr><h4> $ {{ $paquete->precioinstal }}.00 </h4></tr>
+                            </div>
+                            <div>
+                                <tr><h5> Por instalación </h5></tr>
+                            </div>
+                            <div>
+                            <tr><img style="width: 100%; height: 100%" src="{{ asset('storage').'/'.$paquete->imagen }}" alt="..." /></td>
+                            </div>
+                            
+                        </div>
+                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
+                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                           
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        
+                    </div>
+                </div>
+                @endif
+                @endforeach
+                
+            </div>
+
+
+
+            <div class="row cta navbar rounded">
+                <h2>Paquetes MIXTOS !!</h2>
+            </div>
+            <div class="row" width="100%">
+                
+                @foreach ($paquetes as $paquete)
+                @if($paquete->id_tipo == 3)
+                <div class="card" style="width: 25%">
+                  
+                     
+                    <div class="card-body">
+                        
+
+                        <div class="form-group, text-Black" style="text-align:center">
+                            
+                            <div>
+                                <tr><h4 >Paquete {{ $paquete->nombre }} </h4></tr>
+                            </div>
+                            <br>
+                            
+                            <div>
+                                <tr><h4>${{ $paquete->precio }}.00 Mensual</h4></tr>
+                            </div>
+
+                            
+                            <div>
+                                <tr><h4> $ {{ $paquete->precioinstal }}.00 </h4></tr>
+                            </div>
+                            <div>
+                                <tr><h5> Por instalación </h5></tr>
+                            </div>
+                            <div>
+                            <tr><img style="width: 100%; height: 100%" src="{{ asset('storage').'/'.$paquete->imagen }}" alt="..." /></td>
+                            </div>
+                            
+                        </div>
+                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
+                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                           
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        
+                    </div>
+                </div>
+                @endif
+                @endforeach
+
+                
+            </div>
+
         </div>
     </div>
 @endsection

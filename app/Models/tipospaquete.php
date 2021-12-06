@@ -26,6 +26,8 @@ class Tipospaquete extends Model
 
     protected $perPage = 20;
 
+    protected $primaryKey = "id_tipo";
+
     /**
      * Attributes that should be mass-assignable.
      *
