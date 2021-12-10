@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('template_title')
     Paquetes Canale
@@ -53,9 +53,9 @@
 											<td>{{ $paquetesCanale->id_canal }}</td>
 
                                             <td>
-                                                <form action="{{ route('paquetes-canales.destroy',$paquetesCanale->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('paquetes-canales.show',$paquetesCanale->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('paquetes-canales.edit',$paquetesCanale->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('paquetes-canales.destroy',$paquetesCanale->id_pack_canal) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary" href="{{ route('paquetes-canales.show',$paquetesCanale->id_pack_canal) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('paquetes-canales.edit',$paquetesCanale->id_pack_canal) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

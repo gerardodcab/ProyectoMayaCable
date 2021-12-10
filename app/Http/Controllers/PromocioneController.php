@@ -43,9 +43,13 @@ class PromocioneController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Promocione::$rules);
+     
 
-        $promocione = Promocione::create($request->all());
+        $datospromocione =  request()->validate(Promocione::$rules);
+        if ($request->hasFile('imagen')){
+            $datospromocione['imagen']=$request->file('imagen')->store('uploads','public');
+        }
+        $promocione = Promocione::insert($datospromocione);
 
         return redirect()->route('promociones.index')
             ->with('success', 'Promocione created successfully.');

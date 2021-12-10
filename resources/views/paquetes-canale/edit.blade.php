@@ -16,7 +16,7 @@
                         <span class="card-title">Update Paquetes Canale</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('paquetes-canales.update', $paquetesCanale->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('paquetes-canales.update', $paquetesCanale->id_pack_canal) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

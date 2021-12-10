@@ -34,7 +34,8 @@
                         </div>
                         <div class="form-group">
                             <strong>Imagen:</strong>
-                            {{ $promocione->imagen }}
+                            <img style="width: 75%; height: 75%" src="{{ asset('storage').'/'.$promocione->imagen }}" alt="..." />
+                       
                         </div>
                         <div class="form-group">
                             <strong>Fechainicio:</strong>

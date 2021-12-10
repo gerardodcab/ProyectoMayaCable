@@ -52,12 +52,12 @@
 											<td>{{ $canale->id_canal }}</td>
 											<td>{{ $canale->nombre }}</td>
 											<td>{{ $canale->numero }}</td>
-											<td>{{ $canale->imagen }}</td>
-
+                                            <td><img style="width: 200px; height: 200px" src="{{ asset('storage').'/'.$canale->imagen }}" alt="..." /></td>
+                         
                                             <td>
-                                                <form action="{{ route('canales.destroy',$canale->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('canales.show',$canale->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('canales.edit',$canale->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('canales.destroy',$canale->id_canal) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('canales.show',$canale->id_canal) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('canales.edit',$canale->id_canal) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

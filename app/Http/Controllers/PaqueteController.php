@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paquete;
+use App\Models\Canale;
+use App\Models\PaquetesCanale;
 use Illuminate\Http\Request;
 
 /**
@@ -49,7 +51,7 @@ class PaqueteController extends Controller
             $datospaquete['imagen']=$request->file('imagen')->store('uploads','public');
         }
 
-        $paquete    = Paquete::insert($datospaquete);
+        $paquete = Paquete::insert($datospaquete);
 
 
 
@@ -65,10 +67,15 @@ class PaqueteController extends Controller
      */
     public function show($id)
     {
-        $paquete = Paquete::find($id);
 
-        return view('paquete.show', compact('paquete'));
+        $paquete = Paquete::find($id);
+        $canales = Canale::all();
+        $paquetesCanales = PaquetesCanale::all();
+       
+
+        return view('paquete.show', compact('paquete', 'canales', 'paquetesCanales'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

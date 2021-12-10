@@ -43,9 +43,14 @@ class CanaleController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Canale::$rules);
+        $datoscanale   =   request()->validate(Canale::$rules);
 
-        $canale = Canale::create($request->all());
+        if ($request->hasFile('imagen')){
+            $datoscanale['imagen']=$request->file('imagen')->store('uploads','public');
+        }
+
+
+        $canale = Canale::insert($datoscanale);
 
         return redirect()->route('canales.index')
             ->with('success', 'Canale created successfully.');
@@ -106,4 +111,4 @@ class CanaleController extends Controller
         return redirect()->route('canales.index')
             ->with('success', 'Canale deleted successfully');
     }
-}
+} 

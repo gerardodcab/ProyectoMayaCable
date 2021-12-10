@@ -45,11 +45,10 @@
                             </div>
                             
                         </div>
-                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
-                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                           
+                        <form action="{{ route('paquetes.show',$paquete->id_pack) }}" method="GET">
+                            <input type="submit" class="btn btn-sm btn-primary" value="Guia de canales">
                             @csrf
-                            @method('DELETE')
+                      
                         </form>
                         
                     </div>
@@ -80,6 +79,10 @@
                             <br>
                             
                             <div>
+                                <tr><h4>Velocidad {{ $paquete->velocidad }} MB </h4></tr>
+                            </div>
+
+                            <div>
                                 <tr><h4>${{ $paquete->precio }}.00 Mensual</h4></tr>
                             </div>
 
@@ -95,11 +98,10 @@
                             </div>
                             
                         </div>
-                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
-                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                           
+                        <form action="{{ route('paquetes.show',$paquete->id_pack) }}" method="GET">
+                            <input type="submit" class="btn btn-sm btn-primary" value="Detalles">
                             @csrf
-                            @method('DELETE')
+                      
                         </form>
                         
                     </div>
@@ -130,6 +132,10 @@
                                 <tr><h4 >Paquete {{ $paquete->nombre }} </h4></tr>
                             </div>
                             <br>
+                            <div>
+                                <tr><h4>Velocidad {{ $paquete->velocidad }} MB </h4></tr>
+                            </div>
+                            
                             
                             <div>
                                 <tr><h4>${{ $paquete->precio }}.00 Mensual</h4></tr>
@@ -147,13 +153,11 @@
                             </div>
                             
                         </div>
-                        <form action="{{ route('paquetes.destroy',$paquete->id_pack) }}" method="POST">
-                            <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id_pack) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                           
+                        <form action="{{ route('paquetes.show',$paquete->id_pack) }}" method="GET">
+                            <input type="submit" class="btn btn-sm btn-primary" value="Detalles y Canales">
                             @csrf
-                            @method('DELETE')
+                      
                         </form>
-                        
                     </div>
                 </div>
                 @endif
